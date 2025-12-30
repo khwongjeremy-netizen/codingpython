@@ -1,5 +1,6 @@
 import re
-x = '''L68
+x = '''
+L68
 L30
 R48
 L5
