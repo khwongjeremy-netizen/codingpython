@@ -1,69 +1,36 @@
-#!/bin/python3
+x = '''L68
+L30
+R48
+L5
+R60
+L55
+L1
+L99
+R14
+L82
+'''
 
-import sys
-from typing import List
-
-sys.setrecursionlimit(100000)
-FILE = sys.argv[1] if len(sys.argv) > 1 else "input.txt"
-
-
-def read_lines_to_list() -> List[str]:
-    lines: List[str] = []
-    with open(FILE, "r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            # lines.append(list(line))
-            lines.append(line)
-
-    return lines
-
-
-def part_one():
-    lines = read_lines_to_list()
-    answer = 0
-
-    dial = 50
-    for line in lines:
-        dir = line[0]
-        val = int(line[1:])
-
-        if dir == "R":
-            dial += val
-            dial %= 100
-        else:
-            dial -= val
-            dial %= 100
-
-        if dial == 0:
-            answer += 1
-
-    print(f"Part 1: {answer}")
-
-
-def part_two():
-    lines = read_lines_to_list()
-    answer = 0
-
-    dial = 50
-    for line in lines:
-        dir = line[0]
-        val = int(line[1:])
-
-        if dir == "R":
-            for i in range(0, val):
-                dial += 1
-                dial %= 100
-                if dial == 0:
-                    answer += 1
-        else:
-            for i in range(0, val):
-                dial -= 1
-                dial %= 100
-                if dial == 0:
-                    answer += 1
-
-    print(f"Part 2: {answer}")
-
-
-part_one()
-part_two()
+import re
+mid = 50
+matches = re.findall(r'([a-zA-Z])(\d+)', x)
+result = [(char, int(num)) for char, num in matches]
+'''
+I plan to change the entire combination order into a list of tuples and then I will analyze the tuples to generate the password'''
+num = 0 
+for i in range(len(result)):
+    turn = result[i][1]
+    direction = result[i][0]
+    if direction == 'R':
+        mid += turn
+        while mid > 100:
+            num += 1
+        mid -= 100
+    elif direction == 'L':
+        mid -= turn
+        while mid < 0:
+            num += 1
+            mid += 100
+    if mid == 0 or mid == 100:
+        num += 1
+    print(mid)
+print(num)
