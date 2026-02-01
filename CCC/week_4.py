@@ -6,7 +6,9 @@ while True:
     d = a * n
     if d % b == 1:
         print(n)
+        break
     elif n < b:
         n += 1
     else:
         print("No such integer exists")
+        break
