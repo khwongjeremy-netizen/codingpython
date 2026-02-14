@@ -12,19 +12,18 @@ output:
 cities = [0,]
 output = []
 dist = 0
+yeah = []
 for i in range(4):
     city = int(input('distance: '))
     cities.append(city)
+for j in range(len(cities)):
+    dist = abs(cities[0] - cities[j]) + dist
+    output.append(dist)
+for i in range(len(output)):
+    yeah = []
+    for j in range(len(output)):
+        out = abs(output[i] - output[j])
+        yeah.append(out)
+    print(yeah)
 
-for i in range(len(cities)):
-    output = []
-    dist = 0
-    for j in range(len(cities)):
-        if cities[j] != cities[i]:
-            dist = abs(cities[i] - cities[j]) + dist
-            output.append(dist)
-        else:
-            dist = 0
-            output.append(dist)
-    print(output)
     
