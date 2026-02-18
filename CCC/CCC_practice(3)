@@ -1,26 +1,38 @@
-# 1. Get the number of test cases
+'''
+3
+Ahkiy-6ebvXCV1
+393hhhUHkbs5gh6QpS-9-8
+PL12N-2G1234Duytrty8-86tyaYySsDdEe
+'''
+
 N_input = input()
 N = int(N_input)
 
-# 2. Process each code one by one
 for i in range(N):
     code = input()
     
     letters = ""
-    numbers_str = 0
+    num_str = ''
+    total_sum = 0
+    is_negative = False 
     
-    # 3. Use a loop to separate letters and numbers
     for char in code:
         if "A" <= char <= "Z":
             letters = letters + char
-        elif char.isdigit():
-            numbers_str = numbers_str + int(char)
+        
+        elif char == "-":
+            is_negative = True
             
-    # 4. Handle the "Base 10" error: 
-    # Only convert to int if we actually found numbers!
-    if numbers_str != "":
-        result_num = int(numbers_str)
-        print(letters + str(result_num))
-    else:
-        # If no numbers were found, just print the letters
-        print(letters + "0")
+        elif "0" <= char <= "9":
+            # Convert only the single digit found
+            num_str += char 
+        digit_value = int(num_str)
+        
+        if is_negative:
+            total_sum = total_sum - digit_value
+            is_negative = False # Reset the negative flag after using it
+        else:
+            total_sum = total_sum + digit_value
+
+    # Combine the letters and the final sum
+    print(letters + str(total_sum))
