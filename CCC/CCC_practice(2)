@@ -1,0 +1,14 @@
+D = int(input())
+#NUmber of donuts available when the shop opens
+events = int(input())
+R = D
+for i in range(events):
+    plusorminus = input()
+    Q = int(input())
+    if plusorminus == '-':
+        Q = Q * -1
+    R = R + Q
+
+print(R)
+
+#Number of donuts remaining

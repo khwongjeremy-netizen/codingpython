@@ -1,0 +1,10 @@
+N = int(input())
+#N = your place in the line
+C = int(input())
+#Number of cars in the train
+P = int(input())
+#Number of people a car can hold
+if N > C*P:
+    print('No')
+else:
+    print('Yes')
