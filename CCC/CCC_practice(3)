@@ -1,0 +1,26 @@
+# 1. Get the number of test cases
+N_input = input()
+N = int(N_input)
+
+# 2. Process each code one by one
+for i in range(N):
+    code = input()
+    
+    letters = ""
+    numbers_str = 0
+    
+    # 3. Use a loop to separate letters and numbers
+    for char in code:
+        if "A" <= char <= "Z":
+            letters = letters + char
+        elif char.isdigit():
+            numbers_str = numbers_str + int(char)
+            
+    # 4. Handle the "Base 10" error: 
+    # Only convert to int if we actually found numbers!
+    if numbers_str != "":
+        result_num = int(numbers_str)
+        print(letters + str(result_num))
+    else:
+        # If no numbers were found, just print the letters
+        print(letters + "0")
