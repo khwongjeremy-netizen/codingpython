@@ -11,6 +11,9 @@ for num in data:
 
 # Output: {1: 2, 2: 3, 3: 1, 4: 1}
 print(counts)
+# HOW IT WORKS: Uses a hash table to jump directly to a memory location.
+    # WHEN TO USE: Frequency counting, memoization (DP), or mapping IDs to names.
+    # COMPLEXITY: O(1) average for inserts and lookups.
 
 #>------------/// STACK
 # Stack (using a simple list)
@@ -24,6 +27,10 @@ from collections import deque
 queue = deque(["A", "B"])
 queue.append("C")      # Enqueue
 first = queue.popleft() # Removes "A" (the first one in)
+# --- STACK (LIFO: Last-In, First-Out) ---
+    # HOW IT WORKS: Like a stack of pancakes; you only interact with the top.
+    # WHEN TO USE: Reversing data, matching parentheses, or DFS.
+    # COMPLEXITY: O(1) for append/pop.
 
 #>------------///BREADTH FIRST SEARCH
 from collections import deque
@@ -44,6 +51,9 @@ def bfs(graph, start_node):
 # Example graph as an Adjacency List
 graph = { 'A': ['B', 'C'], 'B': ['D'], 'C': ['D'], 'D': [] }
 bfs(graph, 'A')
+    # HOW IT WORKS: Uses a QUEUE to explore neighbors level-by-level.
+    # WHEN TO USE: Finding the SHORTEST path in unweighted graphs/grids.
+    # COMPLEXITY: O(V + E) where V is vertices and E is edges.
 
 #>------------///
 def dfs(graph, node, visited=None):
@@ -59,6 +69,9 @@ def dfs(graph, node, visited=None):
 
 # Using the same graph as above
 dfs(graph, 'A')
+# HOW IT WORKS: Uses RECURSION (or a Stack) to go deep before wide.
+    # WHEN TO USE: Checking connectivity, solving puzzles/mazes, or exhaustive search.
+    # COMPLEXITY: O(V + E).
 
 #>------------///
 def binary_search(arr, target):
@@ -78,3 +91,7 @@ def binary_search(arr, target):
 
 sorted_list = [10, 20, 30, 40, 50]
 print(binary_search(sorted_list, 40)) # Output: 3
+# HOW IT WORKS: Looks at the middle; if the target is smaller, 
+    # discard the right half. If larger, discard the left half.
+    # WHEN TO USE: Fast searching in sorted arrays or "Binary Search on Answer."
+    # COMPLEXITY: O(log n).
