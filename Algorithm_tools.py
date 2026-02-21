@@ -1,3 +1,4 @@
+#>------------///DICTIONARIES
 # Problem: Count the frequency of each number in a list
 data = [1, 2, 2, 3, 1, 4, 2]
 counts = {}
@@ -11,7 +12,7 @@ for num in data:
 # Output: {1: 2, 2: 3, 3: 1, 4: 1}
 print(counts)
 
-#>------------///
+#>------------/// STACK
 # Stack (using a simple list)
 stack = []
 stack.append("A")  # Push
@@ -24,7 +25,7 @@ queue = deque(["A", "B"])
 queue.append("C")      # Enqueue
 first = queue.popleft() # Removes "A" (the first one in)
 
-#>------------///
+#>------------///BREADTH FIRST SEARCH
 from collections import deque
 
 def bfs(graph, start_node):
