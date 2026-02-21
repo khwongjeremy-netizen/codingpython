@@ -1,14 +1,16 @@
 Dusa = int(input())
 yobi = []
-size = 0
+size = Dusa
 while True:
-    yobi_size = int(input())
+    yobi_size = input()
     if yobi_size == '':
         break
-    yobi.append(int(yobi_size))
+    else:
+        yobi.append(int(yobi_size))
 
 for i in range(len(yobi)):
-    if yobi[i] > size:
+    if yobi[i] < size:
         size += yobi[i]
+        print('added')
 
 print(size)
