@@ -19,15 +19,25 @@ for cade in code_list:
     caps = ''
     number = 0
     current = ''
-
+    neg = False
     for i in range(len(cade)):
         if cade[i].isupper():
             caps += cade[i]
-        if cade[i].isdigit() or cade[i] == '-' and not cade[i].isalpha():
+        if cade[i].isdigit() and not cade[i].isalpha():
             current += cade[i]
             print("current: " + str(current))
-        elif current != '':
+        if cade[i] == '-':
+            neg = True
+        elif neg and cade[i].isdigit():
+            current += cade[i]
+        else:
+            neg = False
+        if current != '':
             number += int(current)
             current = ''
             print("number: " + str(number))
-print(caps + str(number))
+    if current != '':
+        number += int(current)
+        current = ''
+        print("number: " + str(number))
+    print(caps + str(number))
