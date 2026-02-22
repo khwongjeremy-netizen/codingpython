@@ -23,21 +23,26 @@ for cade in code_list:
     for i in range(len(cade)):
         if cade[i].isupper():
             caps += cade[i]
-        if cade[i].isdigit() and not cade[i].isalpha():
+        if cade[i].isdigit():
             current += cade[i]
             print("current: " + str(current))
-        if cade[i] == '-':
+        elif cade[i] == '-':
             neg = True
-        elif neg and cade[i].isdigit():
             current += cade[i]
         else:
             neg = False
-        if current != '':
-            number += int(current)
+        if current != '' and neg:
+            number -= int(current)
+            current = ''
+        elif current != '' and not neg:
+            numbrer += int(current)
             current = ''
             print("number: " + str(number))
-    if current != '':
-        number += int(current)
+    if current != '' and neg:
+        number -= int(current)
+        current = ''
+    elif current != '' and not neg:
+        numbrer += int(current)
         current = ''
         print("number: " + str(number))
     print(caps + str(number))

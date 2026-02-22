@@ -1,1 +1,2 @@
-print(int(-1))
+yeah = input()
+print(int(yeah))
