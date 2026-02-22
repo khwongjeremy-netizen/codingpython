@@ -1,0 +1,19 @@
+codes_num = int(input())
+code_list = []
+for i in range(codes_num):
+    code = input()
+    code_list.append(code)
+
+for cade in code_list:
+    caps = ''
+    number = 0
+    current = ''
+
+    for i in range(len(cade)):
+        if cade[i].isupper():
+            caps += cade[i]
+        elif cade[i].isdigit() or cade[i] == '-':
+            current += cade[i]
+        elif current != '':
+            number += int(current)
+print(caps + str(number))
