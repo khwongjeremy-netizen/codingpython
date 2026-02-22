@@ -1,3 +1,14 @@
+'''
+1
+AbC3c2Cd9
+
+3
+Ahkiy-6ebvXCV1
+393hhhUHkbs5gh6QpS-9-8
+PL12N-2G1234Duytrty8-86tyaYySsDdEe
+'''
+
+
 codes_num = int(input())
 code_list = []
 for i in range(codes_num):
@@ -12,8 +23,11 @@ for cade in code_list:
     for i in range(len(cade)):
         if cade[i].isupper():
             caps += cade[i]
-        elif cade[i].isdigit() or cade[i] == '-':
+        if cade[i].isdigit() or cade[i] == '-' and not cade[i].isalpha():
             current += cade[i]
+            print("current: " + str(current))
         elif current != '':
             number += int(current)
+            current = ''
+            print("number: " + str(number))
 print(caps + str(number))
