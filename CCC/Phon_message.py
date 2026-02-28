@@ -41,8 +41,9 @@ for mess in range(len(messages)):
     time = 0
     current = messages[mess]
     for i in range(len(current)):
-        if current[i] == current[i+1]:
-            time += 2
+        if i+1 != len(current):
+            if current[i] == current[i+1]:
+                time += 2
         if current[i]in one:
             time += 1
         if current[i] in two:
