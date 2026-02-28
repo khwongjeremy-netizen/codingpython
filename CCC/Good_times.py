@@ -27,3 +27,4 @@ for i in range(len(zones)):
 
 for i in range(len(times)):
     print(str(times[i]) + ' in {}'.format(zones[i]))
+#3 wrong
