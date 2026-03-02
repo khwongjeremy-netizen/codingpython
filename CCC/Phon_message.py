@@ -76,4 +76,3 @@ for mess in range(len(messages)):
 for i in timetotal:
     print(i)
 
-#why is abba 12 instead of 8? a + pause +  b + pause + b + pause + a(1+2+2+2+2+2+1)
