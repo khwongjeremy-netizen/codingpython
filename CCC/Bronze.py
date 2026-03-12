@@ -19,3 +19,5 @@ for i in contest:
     if i == bronze:
         amt += 1
 print(str(bronze) + " " + str(amt))
+
+#Why is it wrong???
