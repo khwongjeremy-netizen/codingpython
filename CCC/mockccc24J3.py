@@ -18,4 +18,8 @@ for i in range(integer):
             if word[j] == 'B':
                 if start and mid:
                     total += 1
+                mid = False
+                start = False
+                break 
+                
 print(total)
