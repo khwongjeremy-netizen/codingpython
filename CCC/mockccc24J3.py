@@ -7,21 +7,12 @@ out:
 integer = int(input())
 word = input().lower()
 
-start = ''
-end = ''
-mid = ''
-r = False
-g = False
-b = False
+
+total = 0
 for i in range(word):
-    if i == 'r':
-        start += i
-        r = True
-    if r and i == 'g':
-        mid += i
-        g = True
-    if r and i == 'b':
-        end += i
-        g
-    if 
-    
+    first = i
+    second = i+1
+    third = i+3
+    if word[first] == 'r' and word[second] == 'g' and word[third] == 'b':
+        total += 1
+print(total)
